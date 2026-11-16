@@ -1,0 +1,29 @@
+
+<div class="line"></div>
+
+<div class="feature">
+ <h2>⏳ Birthday Countdown</h2>
+ <div id="countdown">Loading...</div>
+ <p class="small">A little countdown for your special day 💜</p>
+</div>
+
+<div class="feature">
+ <h2>🎶 Our Little Music Corner</h2>
+ <audio id="music" controls loop style="width:100%">
+  <source src="birthday-music.mp3" type="audio/mpeg">
+ </audio>
+ <p class="small">A little melody for your birthday ✨</p>
+</div>
+
+<div class="feature">
+ <h2>🌠 A Sky Full of Wishes</h2>
+ <p>Look at the stars and make a wish!</p>
+ <button onclick="shootStars()">CREATE MAGIC ✨</button>
+</div>
+
+<div class="feature">
+ <h2>🎉 The Grand Celebration</h2>
+ <button onclick="celebrate()">LET'S CELEBRATE 🎊</button>
+</div>
+
+<div id="celebration"></div>
