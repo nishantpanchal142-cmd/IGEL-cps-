@@ -1,0 +1,42 @@
+
+.shooting-star{
+ position:fixed;
+ top:-20px;
+ left:var(--x);
+ color:#fff0c9;
+ font-size:22px;
+ pointer-events:none;
+ animation:shoot 2.5s linear forwards;
+ z-index:10;
+}
+@keyframes shoot{
+ to{transform:translate(180px,100vh);opacity:0}
+}
+#celebration{
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ z-index:20;
+ overflow:hidden;
+}
+.confetti{
+ position:absolute;
+ top:-20px;
+ font-size:22px;
+ animation:fall 3s linear forwards;
+}
+@keyframes fall{
+ to{transform:translateY(110vh) rotate(720deg);opacity:0}
+}
+.feature{
+ padding:15px;
+ margin:15px 0;
+ border:1px solid #b99aff66;
+ border-radius:18px;
+ background:#ffffff10;
+}
+#countdown{
+ color:#fff0c9;
+ font-size:22px;
+ font-weight:bold;
+}
