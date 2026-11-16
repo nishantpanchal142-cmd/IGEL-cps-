@@ -1,0 +1,79 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise for Pari 💗</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;
+  background:#f8e8ef;
+  display:flex;justify-content:center;align-items:center;
+  font-family:Arial,sans-serif;padding:18px;
+}
+.window{
+  width:100%;max-width:430px;min-height:570px;
+  background:#fffdf8;border:3px solid #252025;
+  border-radius:17px;padding:12px;
+  box-shadow:7px 7px #d64da9;text-align:center;
+}
+.bar{
+  background:#d75bb0;border:2px solid #252025;
+  border-radius:9px;padding:13px;color:white;
+  font-size:12px;font-weight:bold;text-align:right;
+}
+.dots{float:left;color:#352038}
+.small{letter-spacing:5px;font-size:11px;margin-top:32px}
+.cat{font-size:65px;margin-top:50px;animation:bounce 1.5s infinite}
+h2{color:#77304f;font-family:Georgia,serif;
+font-style:italic;line-height:1.6;margin-top:30px}
+button{
+  background:#d64da9;color:white;border:0;
+  border-radius:12px;padding:15px 27px;
+  font-weight:bold;font-size:16px;margin:12px;
+  box-shadow:0 4px #a52d7d;
+}
+#no{background:white;color:#77304f;border:1px solid #d64da9;box-shadow:none}
+#second{display:none}
+.heart{font-size:35px;animation:bounce 1s infinite}
+@keyframes bounce{50%{transform:translateY(-9px)}}
+p{color:#77304f;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="window">
+  <div class="bar">
+    <span class="dots">● ● ●</span>SURPRISE.EXE
+  </div>
+  <div id="first">
+    <div class="small">✦ A LITTLE QUESTION ✦</div>
+    <div class="cat">🐱</div>
+    <h2>I made something special<br>for you... wanna see it?</h2>
+    <button onclick="yes()">♥ YES!</button>
+    <button id="no" onclick="no()">NO?</button>
+  </div>
+  <div id="second">
+    <div class="small">✦ YOU ARE SPECIAL ✦</div>
+    <div class="cat">🎀</div>
+    <h1 style="color:#d64da9">YAYYY! 💗</h1>
+    <h2>Happy Birthday Pari!</h2>
+    <p>May your life always be filled with happiness,
+    laughter and beautiful memories.</p>
+    <div class="heart">💗✨🎂✨💗</div>
+    <p>Someone made this little world just for you.</p>
+    <p>With lots of love and wishes! 🎀</p>
+  </div>
+</div>
+<script>
+function yes(){
+ document.getElementById("first").style.display="none";
+ document.getElementById("second").style.display="block";
+}
+function no(){
+ document.getElementById("no").innerText="ARE YOU SURE? 😭";
+}
+</script>
+</body>
+</html>
