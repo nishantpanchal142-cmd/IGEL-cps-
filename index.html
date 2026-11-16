@@ -1,78 +1,123 @@
- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Little Surprise for Pari 💗</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Little Dream for Pari 💜</title>
 <style>
 *{box-sizing:border-box}
 body{
-  margin:0;min-height:100vh;
-  background:#f8e8ef;
-  display:flex;justify-content:center;align-items:center;
-  font-family:Arial,sans-serif;padding:18px;
+ margin:0;min-height:100vh;padding:25px 14px;
+ display:flex;align-items:center;justify-content:center;
+ background:linear-gradient(135deg,#180d35,#493078,#a17bc9);
+ font-family:Georgia,serif;color:#fff;
+ overflow-x:hidden;
 }
-.window{
-  width:100%;max-width:430px;min-height:570px;
-  background:#fffdf8;border:3px solid #252025;
-  border-radius:17px;padding:12px;
-  box-shadow:7px 7px #d64da9;text-align:center;
+.star{
+ position:fixed;pointer-events:none;
+ animation:float 7s infinite ease-in-out;
+ opacity:.7;font-size:20px;
+}
+@keyframes float{
+ 0%,100%{transform:translateY(0) rotate(0deg)}
+ 50%{transform:translateY(-35px) rotate(20deg)}
+}
+.card{
+ width:100%;max-width:430px;min-height:590px;
+ padding:15px;text-align:center;
+ border:2px solid #d9c1ff;border-radius:22px;
+ background:rgba(255,255,255,.12);
+ box-shadow:0 0 35px #c49aff66;
 }
 .bar{
-  background:#d75bb0;border:2px solid #252025;
-  border-radius:9px;padding:13px;color:white;
-  font-size:12px;font-weight:bold;text-align:right;
+ background:#7651a8;padding:13px;
+ border:1px solid #e5caff;border-radius:12px;
+ font:12px Arial;letter-spacing:2px;
 }
-.dots{float:left;color:#352038}
-.small{letter-spacing:5px;font-size:11px;margin-top:32px}
-.cat{font-size:65px;margin-top:50px;animation:bounce 1.5s infinite}
-h2{color:#77304f;font-family:Georgia,serif;
-font-style:italic;line-height:1.6;margin-top:30px}
+.small{font:11px Arial;letter-spacing:5px;margin-top:35px}
+.butterfly{font-size:65px;margin:45px 0 25px;
+ animation:float 3s infinite}
+h1{color:#f2d8ff;font-size:29px}
+h2{font-style:italic;line-height:1.6;color:#f4dcff}
+p{line-height:1.9;color:#f5eaff;font-size:16px}
 button{
-  background:#d64da9;color:white;border:0;
-  border-radius:12px;padding:15px 27px;
-  font-weight:bold;font-size:16px;margin:12px;
-  box-shadow:0 4px #a52d7d;
+ background:#c59aff;color:#281340;
+ border:0;border-radius:25px;
+ padding:14px 25px;margin:12px 5px;
+ font-size:15px;font-weight:bold;
 }
-#no{background:white;color:#77304f;border:1px solid #d64da9;box-shadow:none}
-#second{display:none}
-.heart{font-size:35px;animation:bounce 1s infinite}
-@keyframes bounce{50%{transform:translateY(-9px)}}
-p{color:#77304f;line-height:1.8}
+#no{background:transparent;color:white;border:1px solid #d9c1ff}
+#second,#letter{display:none}
+.heart{font-size:30px;animation:float 2s infinite}
+.line{height:1px;background:#d9c1ff;margin:25px 10px}
 </style>
 </head>
 <body>
-<div class="window">
-  <div class="bar">
-    <span class="dots">● ● ●</span>SURPRISE.EXE
-  </div>
-  <div id="first">
-    <div class="small">✦ A LITTLE QUESTION ✦</div>
-    <div class="cat">🐱</div>
-    <h2>I made something special<br>for you... wanna see it?</h2>
-    <button onclick="yes()">♥ YES!</button>
-    <button id="no" onclick="no()">NO?</button>
-  </div>
-  <div id="second">
-    <div class="small">✦ YOU ARE SPECIAL ✦</div>
-    <div class="cat">🎀</div>
-    <h1 style="color:#d64da9">YAYYY! 💗</h1>
-    <h2>Happy Birthday Pari!</h2>
-    <p>May your life always be filled with happiness,
-    laughter and beautiful memories.</p>
-    <div class="heart">💗✨🎂✨💗</div>
-    <p>Someone made this little world just for you.</p>
-    <p>With lots of love and wishes! 🎀</p>
-  </div>
+
+<div class="star" style="top:8%;left:9%">✦</div>
+<div class="star" style="top:25%;right:8%">✨</div>
+<div class="star" style="bottom:15%;left:10%">✧</div>
+<div class="star" style="bottom:8%;right:12%">💜</div>
+
+<div class="card">
+<div class="bar">✦ DREAMY SURPRISE ✦</div>
+
+<div id="first">
+<div class="small">A LITTLE QUESTION</div>
+<div class="butterfly">🦋</div>
+<h2>I made a little dream<br>just for you...</h2>
+<p>Would you like to see your surprise?</p>
+<button onclick="yes()">💜 YES, SHOW ME</button>
+<button id="no" onclick="no()">NO?</button>
 </div>
+
+<div id="second">
+<div class="small">A LITTLE WORLD FOR YOU</div>
+<div class="butterfly">🌙</div>
+<h1>YAYYY! 💜</h1>
+<h2>Happy Birthday Pari!</h2>
+<p>May your days sparkle like stars<br>
+and your dreams shine brighter<br>
+than the moon.</p>
+<div class="line"></div>
+<div class="heart">💜 ✨ 🦋 ✨ 💜</div>
+<p>Today is all about you.<br>You deserve endless happiness!</p>
+<button onclick="openLetter()">💌 OPEN YOUR LETTER</button>
+</div>
+
+<div id="letter">
+<div class="small">A LITTLE LETTER FOR YOU</div>
+<div class="butterfly">💌</div>
+<h2>Dear Pari,</h2>
+<p>
+I hope this birthday brings you countless
+reasons to smile, beautiful memories and
+all the happiness you deserve.
+</p>
+<p>
+Keep shining, keep smiling and never
+stop being your wonderful self.
+</p>
+<p>And please, don't get angry so often! 🥹💜</p>
+<div class="line"></div>
+<h2>With lots of wishes ✨</h2>
+<div class="heart">🎂💜🌙</div>
+</div>
+
+</div>
+
 <script>
 function yes(){
  document.getElementById("first").style.display="none";
  document.getElementById("second").style.display="block";
 }
 function no(){
- document.getElementById("no").innerText="ARE YOU SURE? 😭";
+ document.getElementById("no").innerText="PLEASE SAY YES 🥹";
+}
+function openLetter(){
+ document.getElementById("second").style.display="none";
+ document.getElementById("letter").style.display="block";
 }
 </script>
 </body>
