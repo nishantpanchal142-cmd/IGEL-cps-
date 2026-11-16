@@ -177,3 +177,124 @@ function openLetter(){
 
 </body>
 </html>
+
+.shooting-star{
+ position:fixed;
+ top:-20px;
+ left:var(--x);
+ color:#fff0c9;
+ font-size:22px;
+ pointer-events:none;
+ animation:shoot 2.5s linear forwards;
+ z-index:10;
+}
+@keyframes shoot{
+ to{transform:translate(180px,100vh);opacity:0}
+}
+#celebration{
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ z-index:20;
+ overflow:hidden;
+}
+.confetti{
+ position:absolute;
+ top:-20px;
+ font-size:22px;
+ animation:fall 3s linear forwards;
+}
+@keyframes fall{
+ to{transform:translateY(110vh) rotate(720deg);opacity:0}
+}
+.feature{
+ padding:15px;
+ margin:15px 0;
+ border:1px solid #b99aff66;
+ border-radius:18px;
+ background:#ffffff10;
+}
+#countdown{
+ color:#fff0c9;
+ font-size:22px;
+ font-weight:bold;
+}
+
+<div class="line"></div>
+
+<div class="feature">
+ <h2>⏳ Birthday Countdown</h2>
+ <div id="countdown">Loading...</div>
+ <p class="small">A little countdown for your special day 💜</p>
+</div>
+
+<div class="feature">
+ <h2>🎶 Our Little Music Corner</h2>
+ <audio id="music" controls loop style="width:100%">
+  <source src="birthday-music.mp3" type="audio/mpeg">
+ </audio>
+ <p class="small">A little melody for your birthday ✨</p>
+</div>
+
+<div class="feature">
+ <h2>🌠 A Sky Full of Wishes</h2>
+ <p>Look at the stars and make a wish!</p>
+ <button onclick="shootStars()">CREATE MAGIC ✨</button>
+</div>
+
+<div class="feature">
+ <h2>🎉 The Grand Celebration</h2>
+ <button onclick="celebrate()">LET'S CELEBRATE 🎊</button>
+</div>
+
+<div id="celebration"></div>
+
+function updateCountdown(){
+ const target=new Date("2026-11-17T00:00:00+05:30").getTime();
+ const now=Date.now();
+ const diff=target-now;
+ const el=document.getElementById("countdown");
+
+ if(!el)return;
+
+ if(diff<=0){
+  el.innerText="HAPPY BIRTHDAY PARI! 💜";
+  return;
+ }
+
+ const d=Math.floor(diff/86400000);
+ const h=Math.floor(diff%86400000/3600000);
+ const m=Math.floor(diff%3600000/60000);
+ const s=Math.floor(diff%60000/1000);
+
+ el.innerText=`${d}d ${h}h ${m}m ${s}s`;
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+function shootStars(){
+ for(let i=0;i<12;i++){
+  const star=document.createElement("div");
+  star.className="shooting-star";
+  star.innerText="✦";
+  star.style.setProperty("--x",Math.random()*90+"vw");
+  star.style.animationDelay=Math.random()+"s";
+  document.body.appendChild(star);
+  setTimeout(()=>star.remove(),3500);
+ }
+}
+
+function celebrate(){
+ const area=document.getElementById("celebration");
+ const emojis=["🎉","💜","✨","🎊","🌟","🦋"];
+
+ for(let i=0;i<45;i++){
+  const item=document.createElement("span");
+  item.className="confetti";
+  item.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+  item.style.left=Math.random()*100+"%";
+  item.style.animationDelay=Math.random()*1.5+"s";
+  area.appendChild(item);
+  setTimeout(()=>item.remove(),5000);
+ }
+}
